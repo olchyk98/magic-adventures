@@ -26,34 +26,18 @@ const objects = { // 5, 12
 		url: './gameAssets/tiles/12.png',
 		file: null
 	},
-	"BLOCK_ENV_TORCHPIPE_UP": {
-		mark: 'k',
-		load: true,
-		type: "BLOCK_TEXTURE",
-		url: './gameAssets/blocks_env/torch/torchpipe.png',
-		file: null,
-		className: "TorchPipe"
-	},
-	"BLOCK_ENV_TORCHPIPE_DOWN": {
-		mark: 'm',
-		load: true,
-		type: "BLOCK_TEXTURE",
-		url: './gameAssets/blocks_env/torch/torchpipe-rotated.png',
-		file: null,
-		className: "TorchPipe"
-	},
 	"VISUAL_SPIKES": {
 		mark: 'i',
 		load: true,
 		stack: true,
 		type: "VISUAL_ITEM",
-		className: "Spikes",
 		file: {
 			min: './gameAssets/visual/spikes/1.png',
 			low: './gameAssets/visual/spikes/2.png',
-			medium: './gameAssets/visual/spikes/3.png',
+			high: './gameAssets/visual/spikes/3.png',
 			max: './gameAssets/visual/spikes/4.png'
-		}
+		},
+		className: "Spikes"
 	},
 	"HERO_MODEL": {
 		load: true,
@@ -69,33 +53,53 @@ const objects = { // 5, 12
 
 // o - space
 // x - block
-// g - block with grass
-// c - block with bottom cutfade
-// k - torch pipe top
-// m - torch pipe down
 // i - spikes
 // s - player spawn
 
 const maps = {
-	"HELL": [ // 14 lines
+	"HELL": [
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'sooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooioooooooooooooooooooooooooiooooooooooooooooooiooooooooooooioooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg',
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-		'ccccccccccxccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc',
-		'oooooooooomooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'soooooooiokooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+	],
+	"FLY": [
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooogoooooooooooooxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooogoooooooooooooooooooooooooxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooogoooooooooogooooooooooooooooooooooogoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooosoooooooooooooooooooooooooogooooooooooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooogoooooooooooooooooooooooooooooooooooooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooogooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 	]
 }
 
@@ -104,25 +108,29 @@ const game = {
 	heroObject: null,
 	camera: {
 		translateX: 0
+	},
+	blockSelector: {
+		active: true,
+		blockY: 0,
+		blockX: 0
 	}
 }
 
-const map_construct = maps.HELL.map(io => io.split(""));
+const map_construct = maps["HELL"].map(io => io.split(""));
 const map = [];
 
 class Element {
 	constructor(x, y, width, height) {
 		this.pos = { x, y }
-		this.dimensions = {
-			height,
-			width
-		}
+		
+		this.height = height;
+		this.width = width;
 	}
 
 	predictTouch(x, y, height, width) {
 		if(
-			x + width >= this.pos.x && x <= this.pos.x + this.dimensions.width &&
-			y + height >= this.pos.y && y <= this.pos.y + this.dimensions.height
+			x + width >= this.pos.x && x <= this.pos.x + this.width &&
+			y + height >= this.pos.y && y <= this.pos.y + this.height
 		) return this;
 	}
 }
@@ -141,8 +149,8 @@ class Block extends Element {
 			this.model,
 			this.pos.x,
 			this.pos.y,
-			this.dimensions.width,
-			this.dimensions.height
+			this.width,
+			this.height
 		);
 
 		return this;
@@ -150,48 +158,80 @@ class Block extends Element {
 
 	update() {
 		return this;
-	}
-}
-
-window.TorchPipe = class TorchPipe extends Block {
-	constructor(x, y, texture) {
-		super(x, y, texture);
-
-		this.dHitDelta = 100;
-		this.hitDelta = 0;
 	}
 }
 
 window.Spikes = class Spikes extends Element {
 	constructor(x, y, textures) {
-		super(
-			x, y,
-			game.blockSize,
-			0 // auto
-		);
+		let size = game.blockSize;
 
-		this.damage = 15;
+		super(x, y, size, 0);
+
+		this.frames = Object.values(textures);
 
 		this.frame = 0;
-		this.frames = textures;
+		this.setFrame(this.frame);
+		this.movement = 1;
+
+		this.damageValue = 10;
+
+		this.startY = y;
+
+		this.dFrameDelta = this.frameDelta = random(10, 30);
+	}
+
+	setFrame(index) {
+		const image = this.frames[index];
+
+		this.height = (index !== 0) ? image.height : 0;
+		this.frame = index;
+		this.pos.y = this.startY + (game.blockSize - this.height);
 	}
 
 	render() {
+		image(
+			this.frames[this.frame],
+			this.pos.x,
+			this.pos.y,
+			this.width,
+			this.height
+		);
+
 		return this;
 	}
 
 	update() {
+		if(--this.frameDelta <= 0) {
+			this.frameDelta = this.dFrameDelta;
+
+			if(!this.frames[this.frame += this.movement]) {
+				this.frame -= this.movement;
+				this.movement *= -1;
+			}
+
+			this.setFrame(this.frame);
+		}
+
 		return this;
+	}
+
+	damage(target) {
+		if(this.frame !== 0) {
+			target.damage(this.damageValue);
+		}
 	}
 }
 
 class Creature extends Element {
-	constructor(x, y, width, height, speed) {
+	constructor(x, y, width, height, speed, hp, type) {
 		super(x, y, width, height);
 
 		this.speed = speed;
-		this.gravity = .4;
-		this.jumpHeight = 10;
+		this.jumpHeight = 20;
+
+		this.type = type;
+
+		this.gravity = .75;
 		this.velocity = 0;
 
 		this.movement = {
@@ -199,9 +239,34 @@ class Creature extends Element {
 			y: 0
 		}
 		this.directionX = 1;
+
+		this.maxHealth = this.health = hp;
+	}
+ 
+	damage(damage) {
+		if(!damage || this.isDead) return;
+
+		this.health -= damage;
+
+		if(this.health <= 0) {
+			this.isDead = true;
+			this.health = 0;
+
+			if(this.type === "HERO") {
+				generateHero();
+			}
+		}
+	}
+
+	jump() {
+		if(!this.velocity) {
+			this.velocity = -this.jumpHeight;
+		}
 	}
 
 	update() {
+		if(this.isDead) return;
+
 		let update = {
 			allowed: {
 				x: true,
@@ -215,46 +280,51 @@ class Creature extends Element {
 		}
 
 		// test blocks
+		let touched = {
+			x: null,
+			y: null
+		}
+
 		map.flat().forEach(io => {
-			let touched = null;
-
-			const tX = io.predictTouch( // touch y
-				this.pos.x,
-				update.next.y,
-				this.dimensions.width,
-				this.dimensions.height
-			);
-
-			const tY = io.predictTouch( // touch x
+			const tX = io.predictTouch( // touch x
 				update.next.x,
 				this.pos.y,
-				this.dimensions.width,
-				this.dimensions.height	
+				this.width,
+				this.height
 			);
 
-			if(update.allowed.y && tX) {
-				update.allowed.y = false;
-				touched = tX;
-			}
+			const tY = io.predictTouch( // touch y
+				this.pos.x,
+				update.next.y,
+				this.width,
+				this.height	
+			);
 
-			if(update.allowed.x && tY) {
+			if(update.allowed.x && tX) {
 				update.allowed.x = false;
-				touched = tY;
+				touched.x = tX;
 			}
 
-			if(touched) {
-				if(touched instanceof TorchPipe) {
-					this.damage(touched.damage);
+			if(update.allowed.y && tY) {
+				update.allowed.y = false;
+				touched.y = tY;
+			}
+
+			if(touched.x || touched.y) {
+				let fired = "";
+
+				if((touched.x instanceof Spikes && (fired = "x")) || (touched.y instanceof Spikes && (fired = "y"))) {
+					touched[fired].damage(this);
 				}
 			}
 		});
 
 		// ...
-		if(update.allowed.x) {
+		if(update.allowed.x && update.next.x > 0 && update.next.x + this.width < map_construct[0].length * game.blockSize) {
 			this.pos.x = update.next.x;
 		}
 
-		if(update.allowed.y) {
+		if(update.allowed.y && update.next.y > 0) {
 			this.velocity = update.next.velocity;
 			this.pos.y = update.next.y;
 		} else {
@@ -265,9 +335,32 @@ class Creature extends Element {
 	}
 }
 
+class Monster extends Creature {
+	constructor(x, y, width, height, speed) {
+		super(x, y, width, height, speed, 40, "MONSTER");
+	}
+
+	renderHB() { // render health bar
+		let a = 90, // max width
+			b = 12.5, // height
+			c = 15, // margin
+			d = a / 100 * (this.health / this.maxHealth * 100) // width
+
+		fill('red');
+		rect(
+			this.pos.x - a / 2 + this.width / 2 - c / 2,
+			this.pos.y - b - c,
+			d,
+			b
+		);
+	}
+}
+
 class Hero extends Creature {
 	constructor(x, y, width, height, models) {
-		super(x, y, width, height, 5);
+		let speed = 10;
+
+		super(x, y, width, height, speed, 0, "HERO");
 
 		this.models = models;
 		this.model = this.models.idle;
@@ -278,9 +371,21 @@ class Hero extends Creature {
 			this.model,
 			this.pos.x,
 			this.pos.y,
-			this.dimensions.height,
-			this.dimensions.width
+			this.height,
+			this.width
 		);
+
+		return this;
+	}
+
+	updateModel() {
+		if(this.velocity) {
+			this.model = this.models.jump;
+		} else if(this.movement.x) {
+			this.model = this.models.walk;
+		} else {
+			this.model = this.models.idle;
+		}
 
 		return this;
 	}
@@ -294,17 +399,20 @@ class Hero extends Creature {
 				this.movement.x = (isPressed) ? 1 : 0;
 			break;
 			case 32:
-				if(isPressed) this.velocity = -this.jumpHeight;
+				if(isPressed) this.jump();
 			break;
 			default:break;
 		}
 	}
 
-	updateCamera() { // TODO: Stop when map ends
+	updateCamera() {
 		const out = width / 2 - this.speed;
+		const mapWidth = map_construct[0].length * game.blockSize;
 
-		if(this.pos.x > out && this.pos.x + width / 2 < map_construct[0].length * game.blockSize) {
-			game.camera.translateX = -(this.pos.x - out);
+		if(this.pos.x > out && this.pos.x + width / 2 < mapWidth) {
+			game.camera.translateX = this.pos.x - out;
+		} else if(this.pos.x < out) {
+			game.camera.translateX = 0;
 		}
 
 		return this;
@@ -326,49 +434,54 @@ function preload() {
 	});
 }
 
+function generateHero() {
+	let a = [], // spawn pos [x, y]
+		b = [game.blockSize * 1.45, game.blockSize]; // hero sizes [height (+45% bigger than width), width]
+
+	map_construct.forEach((io, ik) => {
+		io.forEach((il, ia) => {
+			if(a.length) return;
+
+			if(il === "s") {
+				a = [
+					ia * game.blockSize, // x
+					ik * game.blockSize - b[1] / 2, // y
+				];
+			}
+		});
+	});
+
+
+	if(game.heroObject) delete game.heroObject;
+
+	game.heroObject = new Hero(
+		a[0],
+		a[1],
+		b[0],
+		b[1],
+		objects.HERO_MODEL.file
+	);
+}
+
 function setup() {
 	createCanvas(innerWidth - .5, innerHeight - .5);
 
-	{
-		let a = [], // spawn pos [x, y]
-			b = [game.blockSize * 1.45, game.blockSize]; // hero sizes [height (+45% bigger than width), width]
-
-		map_construct.forEach((io, ik) => {
-			io.forEach((il, ia) => {
-				if(a.length) return;
-
-				if(il === "s") {
-					a = [
-						ia * game.blockSize, // x
-						ik * game.blockSize - b[1] / 2, // y
-					];
-				}
-			});
-		});
-
-
-		game.heroObject = new Hero(
-			a[0],
-			a[1],
-			b[0],
-			b[1],
-			objects.HERO_MODEL.file
-		);
-	}
+	generateHero();
+	frameRate(60);
 }
 
 function draw() {
-	frameRate(60);
-	translate(game.camera.translateX, 0);
-
+	translate(-game.camera.translateX, 0);
 	background(0);
-	image(
-		objects["BACKGROUND_CAVE"].file,
-		0,
-		0,
-		width,
-		height
-	);
+	for(let ma = 0; ma < Math.ceil(map_construct[0].length * game.blockSize / width); ma++) {
+		image(
+			objects["BACKGROUND_CAVE"].file,
+			ma * width,
+			0,
+			width,
+			height
+		);
+	}
 
 	// Is reactive now
 	map_construct.forEach((io, ia) => { // Y
@@ -398,12 +511,12 @@ function draw() {
 	map.forEach(io => {
 		io.forEach(ik => {
 			ik.render().update();
-			// if(ik.chainSkill) ik.chainSkill();
+			if(ik.chainSkill) ik.chainSkill();
 		});
 	});
 
 	// Render player
-	game.heroObject.render().update().updateCamera();
+	game.heroObject.render().update().updateModel().updateCamera();
 
 }
 
