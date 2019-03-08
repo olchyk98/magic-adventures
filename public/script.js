@@ -1,3 +1,7 @@
+// Do Mage models bigger (crop them)
+// Use objects and letters to build map. (you can pass different functions into objects instead of creating a new class for a fun thing. such as spikes that moves you to a new level)
+// FLY >> Second half -> key
+
 const objects = { // 5, 12
 	"BACKGROUND_CAVE": {
 		objectName: "BACKGROUND_CAVE",
@@ -180,29 +184,29 @@ const maps = {
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
 	],
 	"FLY": [
-		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooogoooooooooooooxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooogoooooooooooooooooooooooooxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooogooooooooofgooooooooooooooooooooooogoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooosoooooofooooooooooofooooooogooooooooooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooogoooooooooooooooooooooooooooooooooooooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooogooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxxxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxxxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxxxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooogooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooiooooogooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooogooooooooofgooooooooooooooooooooooogoooooooooooooooooooooioooooooooooooooooioooooooooooooooooo',
+		'ooooooooooooooooooooooosoooooofooooooooooofooooooogooooooooooxooooooooooooooooooooogooooofooooooooooogoooooooooooooooooo',
+		'ooooooooooooooooooooooogoooooooooooooooooooooooooooooooooooooxooooooooooooooooiooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxoooooooooooooooogooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooooooooooogoooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooghhxoooooioooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxooooofoooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxoioooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooxofoooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxzzxoooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhfffgghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
 		'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjxxjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj',
 	],
 	"CAVE": [
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooox',
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg',
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
@@ -217,8 +221,8 @@ const maps = {
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'sooooooooooooooooooooooooooooooooooouooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooouooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooox',
+		'sooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
@@ -230,14 +234,10 @@ const game = {
 	heroObject: null,
 	map: "CAVE",
 	mapsLoop: [ "CAVE", "STILL", "FLY" ],
+	// mapsLoop: [ "STILL", "FLY", "CAVE" ],
 	camera: {
 		translateX: 0,
 		translateY: 0
-	},
-	blockSelector: {
-		active: true,
-		blockY: 0,
-		blockX: 0
 	},
 	monsters: []
 }
@@ -279,6 +279,12 @@ class Element {
 	predictTouch(x, y, height, width) {
 		if(!this.isObstacle) return null
 
+			if(this.arrayPos.y === 17 && this.arrayPos.x === 36) {
+				console.log(
+					x + width >= this.pos.x && x <= this.pos.x + this.width &&
+					y + height >= this.pos.y && y <= this.pos.y + this.height
+				);
+			}
 		if(
 			x + width >= this.pos.x && x <= this.pos.x + this.width &&
 			y + height >= this.pos.y && y <= this.pos.y + this.height
@@ -550,7 +556,7 @@ class Creature extends Element {
 
 class Spawner extends Element {
 	constructor(x, y, arrayX, arrayY, spawnDelta, spreadClass, spreadTextures) {
-		super(false, x, y, 0, 0);
+		super(false, x, y + game.blockSize, 0, 0);
 
 		this.arrayPos = {
 			x: arrayX,
@@ -569,11 +575,11 @@ class Spawner extends Element {
 
 	update() {
 		if(--this.spawnDelta <= 0) {
-			this.spawnDelta = this.dSpawnDelta;
+			this.spawnDelta = Infinity; // this.dSpawnDelta // DEBUG
 
 			game.monsters.push(new Mage(
 				this.pos.x,
-				this.pos.y,
+				this.pos.y + game.blockSize,
 				this.spreadTextures
 			));
 		}
@@ -584,7 +590,7 @@ class Spawner extends Element {
 
 window.MageSpawner = class MageSpawner extends Spawner {
 	constructor(x, y, textures, arrayY, arrayX, comEnv, objectName, configuration) {
-		let spawnDelta = 0; // 400
+		let spawnDelta = 10; // 400 // DEBUG
 
 		super(x, y, arrayX, arrayY, spawnDelta, Mage, objects["MONSTER_MAGE"].file);
 	}
@@ -617,18 +623,31 @@ class Mage extends Monster {
 	constructor(x, y, textures) {
 		let speed = 30,
 			width = game.blockSize,
-			height = game.blockSize;
+			height = width * 1.5;
 
-		super(x, y, width, height, speed);
+		console.log(y)
+		super(x, y - height, width, height, speed);
 
 		this.textures = textures; // library
 		this.frames = textures.jump; // current
 		this.frameN = 0;
+
+		// this.updateFrame();
 	}
 
+// 	updateFrame() {
+// 		const a = this.frames,
+// 			  b = this.frameN;
+// 
+// 		if(a[b + 1]) this.frameN++;
+// 		else this.frameN = 0;
+// 
+// 		this.height = this.width * 1.5;
+// 	}
+
 	render() {
-		image(
-			this.frames[this.frameN], // TODO: CROP MODEL IMAGES
+		rect(
+			// this.frames[this.frameN], // TODO: CROP MODEL IMAGES
 			this.pos.x,
 			this.pos.y,
 			this.width,
@@ -837,7 +856,7 @@ function draw() {
 
 	// Render monsters
 	game.monsters.forEach(io => {
-		io.render().renderHB().update();
+		io.renderHB().render().update();
 	});
 
 	// Render player
