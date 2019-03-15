@@ -1,6 +1,8 @@
 // Do Mage models bigger (crop them)
 // Use objects and letters to build map. (you can pass different functions into objects instead of creating a new class for a fun thing. such as spikes that moves you to a new level)
 // FLY >> Second half -> key
+// Items: health, speed
+// Big maps
 
 const objects = { // 5, 12
 	"BACKGROUND_CAVE": {
@@ -121,7 +123,7 @@ const objects = { // 5, 12
 				'./gameAssets/creatures/mage/hit1.png',
 				'./gameAssets/creatures/mage/hit2.png'
 			],
-			jump: [
+			idle: [
 				'./gameAssets/creatures/mage/jump1.png'
 			],
 			run: [
@@ -171,9 +173,9 @@ const maps = {
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'sooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'soooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooofffffffffffffffffffffffff',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooofxxxxxxxxxxxxxxxxxxxxxxxxxx',
+		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxooooooooooooooooooooooooo',
 		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooiooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'ooooooooooooooooooooooooooooooooooooooooooooooooooooooooogggggfgggggggfhfggggggggggggggggggfoooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooxxxxxxxxxxxxxxoxxxxxxxxxxxxxxxxxxxxoooooooooooooooooooooooooooo',
@@ -191,7 +193,7 @@ const maps = {
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooxxooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooooooooooooooooooooogooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'ooooooooooooooooooooooooooiooooogooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'ooooooooooooooooooooooooooiooooogooooioooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooogooooooooofgooooooooooooooooooooooogoooooooooooooooooooooioooooooooooooooooioooooooooooooooooo',
 		'ooooooooooooooooooooooosoooooofooooooooooofooooooogooooooooooxooooooooooooooooooooogooooofooooooooooogoooooooooooooooooo',
 		'ooooooooooooooooooooooogoooooooooooooooooooooooooooooooooooooxooooooooooooooooiooooooooooooooooooooooooooooooooooooooooo',
@@ -206,7 +208,7 @@ const maps = {
 		'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjxxjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj',
 	],
 	"CAVE": [
-		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooox',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg',
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
@@ -221,8 +223,8 @@ const maps = {
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
-		'oooooooooooooooooooooooooooooooooooouooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooox',
-		'sooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
+		'soooooooooooooooooooooooouoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo',
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
 		'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
@@ -235,11 +237,18 @@ const game = {
 	map: "CAVE",
 	mapsLoop: [ "CAVE", "STILL", "FLY" ],
 	// mapsLoop: [ "STILL", "FLY", "CAVE" ],
+	time: {
+		mapTime: 0,
+		globalTime: 0,
+		int: null
+	},
 	camera: {
 		translateX: 0,
 		translateY: 0
 	},
-	monsters: []
+	monsters: {
+		mages: []
+	}
 }
 
 let map_construct = [];
@@ -254,7 +263,7 @@ function changeMap(next = true) {
 		if(b) {
 			game.map = _a[a + 1];
 		} else {
-			console.log("GAME END");
+			clearInterval(game.time.int);
 
 			return;
 		}
@@ -263,6 +272,11 @@ function changeMap(next = true) {
 	map_construct = maps[game.map].map(io => io.split(""));
 	map = [];
 
+	game.time.mapTime = 0;
+
+	Object.keys(game.monsters).forEach(io => {
+		game.monsters[io].length = 0;
+	});
 	generateHero();
 }
 
@@ -276,19 +290,17 @@ class Element {
 		this.isObstacle = isObstacle;
 	}
 
-	predictTouch(x, y, height, width) {
-		if(!this.isObstacle) return null
+	predictTouch(x, y, width, height) {
+		if(!this.isObstacle) return false;
 
-			if(this.arrayPos.y === 17 && this.arrayPos.x === 36) {
-				console.log(
-					x + width >= this.pos.x && x <= this.pos.x + this.width &&
-					y + height >= this.pos.y && y <= this.pos.y + this.height
-				);
-			}
+		// console.log((x + width >= this.pos.x && x <= this.pos.x + width),
+			// y + height >= this.pos.y && y <= this.pos.y + this.height);
+
 		if(
-			x + width >= this.pos.x && x <= this.pos.x + this.width &&
+			x + width >= this.pos.x && x <= this.pos.x + width &&
 			y + height >= this.pos.y && y <= this.pos.y + this.height
 		) return this;
+
 	}
 }
 
@@ -374,7 +386,7 @@ window.Spikes = class Spikes extends Element {
 		this.comEnv = comEnv;
 		this.fired = false;
 
-		this.dFrameDelta = this.frameDelta = random(10, 30);
+		this.dFrameDelta = this.frameDelta = random(20, 30);
 	}
 
 	setFrame(index) {
@@ -418,7 +430,11 @@ window.Spikes = class Spikes extends Element {
 		if(!this.fired && target.type === "HERO" && this.configuration.onFire) wouldFire = true;
 
 		if(this.frame !== 0 && !wouldFire) {
-			target.damage(this.damageValue);
+			if(target.type === "HERO") {
+				target.damage(this.damageValue);
+			} else {
+				target.damage(this.damageValue);
+			}
 			return;
 		}
 
@@ -431,21 +447,25 @@ window.Spikes = class Spikes extends Element {
 
 class Creature extends Element {
 	constructor(x, y, width, height, speed, hp, type) {
-		super(true, x, y, width, height);
+		super(false, x, y, width, height);
 
 		this.speed = speed;
-		this.jumpHeight = 20;
+		this.jumpHeight = innerHeight / 45;
 
 		this.type = type;
 
 		this.gravity = .75;
 		this.velocity = 0;
 
+		this.attackDelta = this.dAttackDelta = 30;
+
 		this.movement = {
 			x: 0,
 			y: 0
 		}
 		this.directionX = 1;
+
+		this.stabXVelocity = 0; // cannot be more than 0
 
 		this.maxHealth = this.health = hp;
 	}
@@ -465,6 +485,23 @@ class Creature extends Element {
 		}
 	}
 
+	renderHB() { // render health bar
+		let a = 70, // max width
+			b = 12.5, // height
+			c = 15, // margin
+			d = a / 100 * (this.health / this.maxHealth * 100) // width
+
+		fill('red');
+		rect(
+			this.pos.x - a / 2 + this.width / 2 - c / 2,
+			this.pos.y - b - c,
+			d,
+			b
+		);
+
+		return this;
+	}
+
 	jump() {
 		if(!this.velocity) {
 			this.velocity = -this.jumpHeight;
@@ -472,7 +509,10 @@ class Creature extends Element {
 	}
 
 	update() {
-		if(this.isDead) return;
+		if(this.isDead) return this;
+
+		if(this.attackDelta > 0) this.attackDelta--;
+		else if(this.attackDelta < 0) this.attackDelta = 0;
 
 		let update = {
 			allowed: {
@@ -480,7 +520,7 @@ class Creature extends Element {
 				y: true
 			},
 			next: {
-				x: this.pos.x + this.movement.x * this.speed,
+				x: this.pos.x + this.movement.x * this.speed + this.stabXVelocity,
 				y: this.pos.y + this.velocity + this.gravity,
 				velocity: this.velocity + this.gravity
 			}
@@ -534,9 +574,17 @@ class Creature extends Element {
 		const mapWidth = map_construct[0].length * game.blockSize
 		if(update.allowed.x && update.next.x > 0 && (update.next.x + this.width < mapWidth || this.type === "HERO")) {
 			this.pos.x = update.next.x;
+
+			if(this.stabXVelocity !== 0) {
+				this.stabXVelocity += ((this.stabXVelocity < 0) ? 1 : -1);
+			}
+
 			if(this.type === "HERO" && this.pos.x > mapWidth) {
 				changeMap(true);
+				this.stabXVelocity = 0;
 			}
+		} else {
+			this.stabXVelocity = 0;
 		}
 
 		if(update.allowed.y && update.next.y > 0) {
@@ -577,10 +625,15 @@ class Spawner extends Element {
 		if(--this.spawnDelta <= 0) {
 			this.spawnDelta = Infinity; // this.dSpawnDelta // DEBUG
 
-			game.monsters.push(new Mage(
+			let width = game.blockSize - 5,
+				height = width * 1.5;
+
+			game.monsters.mages.push(new Mage(
 				this.pos.x,
-				this.pos.y + game.blockSize,
-				this.spreadTextures
+				this.pos.y + game.blockSize - height,
+				this.spreadTextures,
+				width,
+				height
 			));
 		}
 
@@ -590,64 +643,79 @@ class Spawner extends Element {
 
 window.MageSpawner = class MageSpawner extends Spawner {
 	constructor(x, y, textures, arrayY, arrayX, comEnv, objectName, configuration) {
-		let spawnDelta = 10; // 400 // DEBUG
+		let spawnDelta = 100; // 400 // DEBUG
 
 		super(x, y, arrayX, arrayY, spawnDelta, Mage, objects["MONSTER_MAGE"].file);
 	}
 }
 
 class Monster extends Creature {
-	constructor(x, y, width, height, speed) {
+	constructor(x, y, width, height, speed, viewPixels, damage) {
 		super(x, y, width, height, speed, 40, "MONSTER");
-	}
 
-	renderHB() { // render health bar
-		let a = 90, // max width
-			b = 12.5, // height
-			c = 15, // margin
-			d = a / 100 * (this.health / this.maxHealth * 100) // width
+		this.viewPixels = viewPixels; // view radius
+		this.damage = damage;
 
-		fill('red');
-		rect(
-			this.pos.x - a / 2 + this.width / 2 - c / 2,
-			this.pos.y - b - c,
-			d,
-			b
-		);
-
-		return this;
+		this.npcWalkRad = {
+			gone: 0,
+			max: 150,
+			active: false
+		}
 	}
 }
 
 class Mage extends Monster {
-	constructor(x, y, textures) {
-		let speed = 30,
-			width = game.blockSize,
-			height = width * 1.5;
+	constructor(x, y, textures, width, height) {
+		let speed = 10,
+			viewPixels = 600,
+			attackPixels = 20,
+			damage = 25;
 
-		console.log(y)
-		super(x, y - height, width, height, speed);
+		super(x, y - height, width, height, speed, viewPixels, damage);
 
 		this.textures = textures; // library
-		this.frames = textures.jump; // current
+		this.frames = textures.idle;
 		this.frameN = 0;
 
-		// this.updateFrame();
+		this.framesName = 'idle';
+
+		this.frameDelta = this.dFrameDelta = 10;
 	}
 
-// 	updateFrame() {
-// 		const a = this.frames,
-// 			  b = this.frameN;
-// 
-// 		if(a[b + 1]) this.frameN++;
-// 		else this.frameN = 0;
-// 
-// 		this.height = this.width * 1.5;
-// 	}
+	setFrames(frames, name) {
+		this.framesName = name;
+
+		this.frames = frames;
+		this.frameN = 0;
+	}
+
+	updateFrame() {
+		const a = this.frames,
+			  b = this.frameN;
+
+		if(a[b + 1]) {
+			this.frameN++;
+		} else {
+			this.setFrames(this.textures.idle, 'idle');
+		}
+	}
+
+	resolveFrames() {
+		if(--this.frameDelta <= 0) {
+			this.frameDelta = this.dFrameDelta;
+ 
+			this.updateFrame();
+		}
+
+		return this;
+	}
+
+
+	// game.monsters[0].pos.y + game.monsters[0].height - 17 > map[17][36].pos.y
 
 	render() {
-		rect(
-			// this.frames[this.frameN], // TODO: CROP MODEL IMAGES
+		image(
+			this.frames[this.frameN],
 			this.pos.x,
 			this.pos.y,
 			this.width,
@@ -656,13 +724,41 @@ class Mage extends Monster {
 
 		return this;
 	}
+
+	think() {
+		const target = game.heroObject;
+
+		// Check if distance between monster and hero is more than view radius (check if monster can see hero)
+		if(abs(this.pos.x - target.pos.x) > this.viewPixels) return;
+
+		// Check if can attack |!> Move to the player
+		if(abs(this.pos.x - target.pos.x) <= this.width && abs(this.pos.y - target.pos.y) <= this.height) {
+			this.attack(target);
+			if(this.framesName !== 'attack') this.setFrames(this.textures.attack, 'attack');
+		} else {
+			this.movement.x = (target.pos.x > this.pos.x) ? 1 : -1;
+			if(this.framesName !== 'run') this.setFrames(this.textures.run, 'run');
+		}
+
+		return this;
+	}
+
+	attack(target) {
+		if(this.attackDelta) return;
+
+		this.attackDelta = this.dAttackDelta;
+
+		target.stabXVelocity = 30 * this.movement.x || 1;
+		target.velocity = -20;
+		target.damage(this.damage);
+	}
 }
 
 class Hero extends Creature {
 	constructor(x, y, width, height, models) {
-		let speed = 10;
+		let speed = 12.5;
 
-		super(x, y, width, height, speed, 0, "HERO");
+		super(x, y, width, height, speed, 100, "HERO");
 
 		this.models = models;
 		this.model = this.models.idle;
@@ -725,7 +821,7 @@ class Hero extends Creature {
 
 function generateHero() {
 	let a = [], // spawn pos [x, y]
-		b = [game.blockSize, game.blockSize * .75]; // hero sizes [width (+45% bigger than height), heightd]
+		b = [game.blockSize, game.blockSize * .75]; // hero sizes [width (+45% bigger than height), height]
 
 	map_construct.forEach((io, ik) => {
 		io.forEach((il, ia) => {
@@ -771,6 +867,11 @@ function preload() {
 	});
 }
 
+game.time.int = setInterval(() => {
+	game.time.mapTime += 100;
+	game.time.globalTime += 100;
+}, 100);
+
 function setup() {
 	createCanvas(innerWidth - .5, innerHeight - .5);
 
@@ -781,9 +882,11 @@ function setup() {
 }
 
 function draw() {
+	noStroke();
+
+	// ...
 	translate(-game.camera.translateX, -game.camera.translateY);
-	background(0);
-	for(let ma = 0; ma < Math.ceil(map_construct[0].length * game.blockSize / width); ma++) {
+	for(let ma = 0; ma < ceil(map_construct[0].length * game.blockSize / width); ma++) {
 		image(
 			objects["BACKGROUND_CAVE"].file,
 			ma * width,
@@ -855,13 +958,28 @@ function draw() {
 	});
 
 	// Render monsters
-	game.monsters.forEach(io => {
-		io.renderHB().render().update();
+	game.monsters.mages.forEach(io => {
+		io.renderHB().render().update().resolveFrames().think();
 	});
 
 	// Render player
-	game.heroObject.render().update().updateModel().updateCamera();
+	game.heroObject.render().renderHB().update().updateModel().updateCamera();
 
+	// Draw time
+	textSize(64);
+	fill('white');
+	textAlign(CENTER);
+	text(
+		`${ floor(game.time.mapTime / 1000) }.${ (game.time.mapTime / 1000).toString().replace(/\d+\./g, '') }s`,
+		(game.heroObject.pos.x > width) ? width / 2 + game.camera.translateX : width / 2,
+		100
+	);
+	textSize(32);
+	text(
+		`${ floor(game.time.globalTime / 1000) }.${ (game.time.globalTime / 1000).toString().replace(/\d+\./g, '') }s`,
+		(game.heroObject.pos.x > width) ? width / 2 + game.camera.translateX : width / 2,
+		150
+	);
 }
 
 function keyPressed() {
